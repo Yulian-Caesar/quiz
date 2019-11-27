@@ -79,19 +79,16 @@ const questionAll = [
             {
                 variant: "A",
                 text: "Вариант А",
-                hasIcon: false,
                 profit: "30%"
             },
             {
                 variant: "Б",
                 text: "Вариант Б",
-                hasIcon: false,
                 profit: "50%"
             },
             {
                 variant: "В",
                 text: "Вариант В",
-                hasIcon: false,
                 profit: "20%"
             }
         ],
@@ -103,13 +100,13 @@ const questionAll = [
             {
                 variant: "A",
                 text: "Вариант А",
-                hasIcon: true,
+                iconMan: true,
                 profit: "60%"
             },
             {
                 variant: "Б",
                 text: "Вариант Б",
-                hasIcon: true,
+                iconWoman: true,
                 profit: "40%"
             }
         ],
@@ -139,7 +136,7 @@ const colorLoop = generatorColor(color);
 
 function quizSytart() {
     const container = document.querySelector(".home__container");
-    container.style.maxWidth = "854px";
+    container.classList.add("active");
     document.querySelector(".home__box").classList.add("active");
     setTimeout(changeQuestion(), 500);
 }
@@ -161,7 +158,7 @@ function changeQuestion() {
                     ${questionAll[i].answers
                     .map(answer => `
                         <button 
-                            class="button quiz__answer ${answer.hasIcon ? "icon" : ""}" 
+                            class="button quiz__answer ${answer.iconMan ? "icon--man" : ""} ${answer.iconWoman ? "icon--woman" : ""}" 
                             data-description="${answer.profit ? answer.profit : "?"}"
                             data-variant="${answer.variant ? answer.variant : ""}">
                             ${answer.text}

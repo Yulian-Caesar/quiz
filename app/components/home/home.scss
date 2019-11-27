@@ -1,11 +1,9 @@
-:root {
-    --current-color: #fc5095;
-}
+
 
 .home {
     display: flex;
     position: relative;
-    height: 1080px;
+    min-height: 1080px;
     &__bg {
         display: flex;
         align-items: flex-end;
@@ -21,7 +19,7 @@
             height: 100%;
             width: 0;
             background: var(--current-color);
-            opacity: 0.5;
+            opacity: 0.8;
             transition: .8s;
         }
         &.active {
@@ -43,11 +41,15 @@
         justify-content: flex-end;
         width: 100%;
         max-width: 490px;
-        height: 100%;
+        min-height: 100%;
         margin-left: auto;
         padding-top: 230px;
         background-color: var(--current-color);
         transition: 1s;
+        flex: none;
+        &.active {
+            max-width: 854px;
+        }
     }
     &__heart {
         display: flex;
@@ -78,7 +80,7 @@
         padding: 105px 40px 40px 60px;
         &.active {
             background:  #f6f5f5;
-            padding-top: 85px;
+            padding: 85px 40px 40px 60px;
         }
     }
 }
@@ -156,11 +158,11 @@
         }
     }
     &__button-next {
+        position: relative;
         margin-top: 108px;
         opacity: 0;
-        position: relative;
         z-index: -1;
-        transition: .3s;
+        display: block;
     }
     &__ask {
         display: inline-block;
@@ -183,7 +185,8 @@
         &:not(:first-child) {
             margin-top: 17px;
         }
-        &.icon {
+        &.icon--man,
+        &.icon--woman {
             &:before {
                 content: '';
                 display: inline-block;
@@ -192,6 +195,10 @@
                 width: 18px;
                 height: 40px;
                 transition: .3s;
+            }
+        }
+        &.icon--man {
+            &:before {
                 background-image: url('data:image/svg+xml,\
   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="male" class="svg-inline--fa fa-male fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="rgba(59, 59, 59, 1)" d="M96 0c35.346 0 64 28.654 64 64s-28.654 64-64 64-64-28.654-64-64S60.654 0 96 0m48 144h-11.36c-22.711 10.443-49.59 10.894-73.28 0H48c-26.51 0-48 21.49-48 48v136c0 13.255 10.745 24 24 24h16v136c0 13.255 10.745 24 24 24h64c13.255 0 24-10.745 24-24V352h16c13.255 0 24-10.745 24-24V192c0-26.51-21.49-48-48-48z"></path></svg>');
                 background-repeat: no-repeat;
@@ -200,6 +207,18 @@
             &:hover:before {
                 background-image: url('data:image/svg+xml,\
   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="male" class="svg-inline--fa fa-male fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="white" d="M96 0c35.346 0 64 28.654 64 64s-28.654 64-64 64-64-28.654-64-64S60.654 0 96 0m48 144h-11.36c-22.711 10.443-49.59 10.894-73.28 0H48c-26.51 0-48 21.49-48 48v136c0 13.255 10.745 24 24 24h16v136c0 13.255 10.745 24 24 24h64c13.255 0 24-10.745 24-24V352h16c13.255 0 24-10.745 24-24V192c0-26.51-21.49-48-48-48z"></path></svg>');
+            }
+        }
+        &.icon--woman {
+            &:before {
+                background-image: url('data:image/svg+xml,\
+  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="female" class="svg-inline--fa fa-female fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M128 0c35.346 0 64 28.654 64 64s-28.654 64-64 64c-35.346 0-64-28.654-64-64S92.654 0 128 0m119.283 354.179l-48-192A24 24 0 0 0 176 144h-11.36c-22.711 10.443-49.59 10.894-73.28 0H80a24 24 0 0 0-23.283 18.179l-48 192C4.935 369.305 16.383 384 32 384h56v104c0 13.255 10.745 24 24 24h32c13.255 0 24-10.745 24-24V384h56c15.591 0 27.071-14.671 23.283-29.821z"></path></svg>');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            &:hover:before {
+                background-image: url('data:image/svg+xml,\
+  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="female" class="svg-inline--fa fa-female fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="white" d="M128 0c35.346 0 64 28.654 64 64s-28.654 64-64 64c-35.346 0-64-28.654-64-64S92.654 0 128 0m119.283 354.179l-48-192A24 24 0 0 0 176 144h-11.36c-22.711 10.443-49.59 10.894-73.28 0H80a24 24 0 0 0-23.283 18.179l-48 192C4.935 369.305 16.383 384 32 384h56v104c0 13.255 10.745 24 24 24h32c13.255 0 24-10.745 24-24V384h56c15.591 0 27.071-14.671 23.283-29.821z"></path></svg>');
             }
         }
         &:hover {
@@ -249,7 +268,6 @@
     }
     &.done {
         .quiz__button-next {
-            display: block;
             opacity: 1;
             z-index: 0;
         }
@@ -383,4 +401,328 @@
         font-weight: 800;
         text-transform: uppercase
     }
+}
+
+
+@media screen and (max-width: 1799px){
+    .home {
+        min-height: 800px;
+        &__container {
+            padding-top: 100px;
+            &.active {
+                max-width: 600px;
+            }
+        }
+        &__heart {
+            width: 60px;
+            height: 60px;
+            border-width: 5px;
+            svg {
+                width: 33px;
+            }
+        }
+    }
+
+    .quiz {
+        &__title {
+            font-size: 26px;
+        }
+        &__subtitle {
+            font-size: 20px;
+            margin-bottom: 60px;
+        }
+        &__ask {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        &__answer {
+            max-width: 280px;
+            font-size: 22px;
+            padding: 10px 20px;
+            &.icon--man,
+            &.icon--woman {
+                &:before {
+                    width: 11px;
+                }
+            }
+        }
+        &__button-next {
+            margin-top: 40px;
+        }
+        &-start {
+            &__title {
+                font-size: 24px;
+            }
+            .button {
+                font-size: 26px;
+                max-width: 200px;
+                padding: 10px 20px;
+            }
+        }
+    }
+
+    .profit {
+        &__title {
+            font-size: 200px;
+        }
+        &__content {
+            font-size: 24px;
+        }
+    }
+
+    .form {
+        &-box {
+            &__title {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 1199px){
+    .home {
+        min-height: 600px;
+        &__container {
+            padding-top: 40px;
+        }
+        &__box {
+            &.active {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 40px 50px 40px 60px;
+            }
+        }
+    }
+
+    .profit {
+        &__title {
+            font-size: 140px;
+        }
+        &__content {
+            font-size: 22px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1023px){
+    .home {
+        min-height: 500px;
+        &__container {
+            max-width: 400px;
+            &.active {
+                max-width: 450px;
+            }
+        }
+        &__box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 20px 40px 40px;
+            &.active {
+                padding: 40px 20px 40px 40px;
+            }
+        }
+        &__heart {
+            top: 200px;
+            width: 50px;
+            height: 50px;
+            svg {
+                width: 28px;
+            }
+        }
+    }
+
+    .quiz {
+        &__title {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        &__subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        &-start {
+            &__title {
+                font-size: 20px;
+            }
+            .button {
+                font-size: 22px;
+            }
+        }
+        &__ask {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        &__answer {
+            max-width: 220px;
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+        &__button-next {
+            font-size: 20px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 220px;
+        }
+    }
+
+    .form {
+        &-box {
+            &__title {
+                font-size: 22px;
+            }
+        }
+    }
+
+    .profit {
+        &__title {
+            font-size: 120px;
+        }
+        &__content {
+            font-size: 18px;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 767px){
+    .home {
+        display: flex;
+        flex-direction: column;
+        min-height: 1px;
+        &__bg {
+            display: flex;
+            align-items: center;
+            background: transparent;
+            opacity: 1;
+            &.active {
+                min-height: 140px;
+            }
+        }
+        &__container {
+            max-width: 100%;
+            padding: 20px;
+            transition: .1s;
+            &.active {
+                max-width: 100%;
+            }
+        }
+        &__box {
+            padding: 20px;
+            margin-left: 0;
+            &.active {
+                padding: 20px;
+            }
+        }
+        &__heart {
+            display: none;
+        }
+    }
+
+    .header {
+        &-menu {
+            justify-content: center;
+        }
+    }
+
+    .quiz {
+        &-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__subtitle {
+            text-align: center;
+        }
+        &__button-next {
+            margin: 10px auto 0;
+        }
+    }
+
+    .form {
+        &-box {
+            &__title {
+                font-size: 20px;
+            }
+        }
+        &__button {
+            display: block;
+            margin: 10px auto 0;
+        }
+    }
+
+    .profit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__title {
+            font-size: 80px;
+        }
+        &__content {
+            text-align: center;
+        }
+    }
+
+}
+
+@media screen and (max-width: 479px){
+    .home {
+        &__container {
+            padding: 10px;
+        }
+        &__box {
+            padding: 10px;
+            &.active {
+                padding: 10px;
+            }
+        }
+    }
+
+    .quiz {
+        &__title,
+        &__ask {
+            font-size: 18px;
+        }
+    }
+
+    .profit {
+        width: 100%;
+        max-width: 200px;
+        &__title {
+            font-size: 70px;
+        }
+    }
+
+    .form {
+        &-box {
+          &__title {
+              text-align: center;
+              font-size: 18px;
+          }
+        }
+        &-checkbox {
+            label {
+                margin-top: 15px;
+            }
+        }
+        &__button {
+            font-size: 22px;
+            max-width: 220px;
+            padding: 15px;
+        }
+    }
+
+    .gender {
+        &__group {
+            width: calc(50% - 5px);
+            margin-right: 10px;
+        }
+    }
+
 }
