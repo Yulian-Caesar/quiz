@@ -1,0 +1,109 @@
+<section class="home">
+    <div class="home__bg">
+        <div class="profit">
+            <span class="profit__title"></span>
+            <span class="profit__content">
+                <span class="profit__text"></span>
+                <span class="profit__variant"></span>.
+            </span>
+        </div>
+        <header class="header">
+            <div class="header__container">
+                <nav class="header-navigation">
+                    <ul class="header-menu">
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">название1</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">название2</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">название3</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">название4</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">очень длинное название5</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">очень длинное название6</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">очень длинное название7</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">очень длинное название8</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <div class="home__container">
+        <div class="home__heart">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
+            </svg>
+        </div>
+        <div class="home__box">
+            <div id="quiz" class="quiz">
+                <div class="quiz-content" id="quiz-content">
+                    <h2 class="quiz__title">Lorem ipsum</h2>
+                    <h4 class="quiz__subtitle">
+                        Mauris vel nisi ac orci placerat semper.
+                        Aenean sapien massa.
+                    </h4>
+                    <div class="quiz-start">
+                        <span class="quiz-start__title">Lorem Ipsum?</span>
+                        <button class="button js--start-quiz">НАчать</button>
+                    </div>
+                </div>
+                <button class="button quiz__button-next">Продолжить</button>
+                <div class="quiz__end">
+                    <button class="button quiz__end-button">END test</button>
+                </div>
+            </div>
+            <div class="form-box">
+                <h4 class="form-box__title">
+                    Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,
+                    sed do eiusmod
+                </h4>
+                <form  class="form home__form" id="form" onsubmit="return validateForm()">
+                    <div class="gender form__gender">
+                        <span class="gender__title">Я ищу:</span>
+                        <div class="label-group gender__group">
+                            <input type="radio" name="gender" id="gender-male" />
+                            <label for="gender-male" class="man">Вариант 1</label>
+                        </div>
+                        <div class="label-group gender__group">
+                            <input type="radio" name="gender" id="gender-female" />
+                            <label for="gender-female" class="woman">Вариант 2</label>
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label>Ваше имя:</label>
+                        <input type="text" name="name" class="input form__input--name" />
+                    </div>
+                    <div class="form__group">
+                        <label>Email:</label>
+                        <input type="tel" name="email" class="input form__input--email" />
+                    </div>
+                    <div class="form__group">
+                        <label>Придумайте пароль:</label>
+                        <input type="password" name="password" class="input form__input--password" />
+                    </div>
+                    <div class="form__group form-checkbox">
+                        <input type="checkbox" class="form-checkbox__input" id="form__checkbox1">
+                        <label class="form-checkbox__label" for="form__checkbox1">
+                            Регистрируясь, вы подтверждаете, что вам уже исполнилось
+                            18 лет и вы ознакомились с условиями пользования сайтом.
+                        </label>
+                    </div>
+                    <button type="submit" class="button form__button">продолжить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
