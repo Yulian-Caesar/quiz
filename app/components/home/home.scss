@@ -611,6 +611,12 @@
             opacity: 1;
             &.active {
                 min-height: 140px;
+                .profit {
+                    z-index: 2;
+                }
+            }
+            &:before {
+                z-index: 2;
             }
         }
         &__container {
