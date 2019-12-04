@@ -637,6 +637,9 @@
         &__heart {
             display: none;
         }
+        &__form {
+            margin: 0 auto;
+        }
     }
 
     .header {
@@ -654,6 +657,9 @@
         &__subtitle {
             text-align: center;
         }
+        &__ask {
+            text-align: center;
+        }
         &__button-next {
             margin: 10px auto 0;
         }
@@ -661,8 +667,12 @@
 
     .form {
         &-box {
+            max-width: 460px;
+            margin: 0 auto;
             &__title {
+                text-align: center;
                 font-size: 20px;
+                max-width: 100%;
             }
         }
         &__button {
